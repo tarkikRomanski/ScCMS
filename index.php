@@ -1,7 +1,7 @@
 <?php
 require_once "connector.php";
 
-use Connector\connector as conn;
+use DataBase\Connect as conn;
 
 $connect = new conn("Main");
 ?>
@@ -11,9 +11,21 @@ $connect = new conn("Main");
     <head>
         <meta charset="utf-8">
         <title>Main page</title>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="/js/jquery.wysibb.min.js"></script>
+        <link rel="stylesheet" href="/css/default/wbbtheme.css" />
+        <script src="/js/ua.js"></script>
+
+        <script>
+            var wbbOpt = {
+                lang: "ua"
+            }
+            $(function() {
+                $("#editor").wysibb(wbbOpt);
+            })
+        </script>
     </head>
     <body>
-        <h1>Just large text</h1>
-        <p>Just text</p>
+    <textarea id="editor" style="height: 400px;"></textarea>
     </body>
 </html>

@@ -1,9 +1,7 @@
 <?php
-require_once "connector.php";
+require_once "db_connect.php";
 
-use DataBase\Connect as conn;
-
-$connect = new conn("Main");
+use scDataBase\Connect as conn;
 ?>
 
 <!DOCTYPE html>
@@ -12,20 +10,9 @@ $connect = new conn("Main");
         <meta charset="utf-8">
         <title>Main page</title>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script src="/js/jquery.wysibb.min.js"></script>
-        <link rel="stylesheet" href="/css/default/wbbtheme.css" />
-        <script src="/js/ua.js"></script>
-
-        <script>
-            var wbbOpt = {
-                lang: "ua"
-            }
-            $(function() {
-                $("#editor").wysibb(wbbOpt);
-            })
-        </script>
+        <link rel="stylesheet" href="css/themes/matherial-main.css">
     </head>
-    <body>
-    <textarea id="editor" style="height: 400px;"></textarea>
-    </body>
+<body>
+
+</body>
 </html>

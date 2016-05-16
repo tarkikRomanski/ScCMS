@@ -131,8 +131,8 @@ class BBCode {
     };
 
 
-    // Replace [youtube]...[/youtube] with <iframe src="..."></iframe>
-    $this->bbcode_table["/\[youtube\](?:http?:\/\/)?(?:www\.)?youtu(?:\.be\/|be\.com\/watch\?v=)([A-Z0-9\-_]+)(?:&(.*?))?\[\/youtube\]/i"] = function ($match) {
+    // Replace [video]...[/video] with <iframe src="..."></iframe>
+    $this->bbcode_table["/\[video\](.*?)\[\/video\]/"] = function ($match) {
       return "<iframe class=\"youtube-player\" type=\"text/html\" width=\"640\" height=\"385\" src=\"http://www.youtube.com/embed/$match[1]\" frameborder=\"0\"></iframe>";
     };
   }

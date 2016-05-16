@@ -1,0 +1,239 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+/*font-family: 'Roboto', sans-serif;*/
+/*
+primary color: #CDDC39;
+dark primary color: #827717;
+accent color: #D500F9;
+ */
+
+body {
+  color: #212121;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 8px 16px;
+}
+
+h1, h2, h3 {
+  color: #827717;
+  text-transform: uppercase;
+}
+
+h3 {
+  text-transform: lowercase;
+}
+
+p {
+
+}
+
+a{
+  color: #D500F9;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #212121;
+  text-transform: lowercase;
+  text-decoration: underline;
+}
+
+.ava {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+}
+
+.ava img {
+  height: 100%;
+}
+
+.shadow1 {
+  box-shadow: 2px 2px 5px #212121;
+}
+
+.shadow2 {
+  box-shadow: 4px 4px 10px #212121;
+}
+
+.card {
+  padding: 8px;
+  margin: 8px;
+}
+
+.card h1, h2, h3 {
+  margin-top: 0px;
+}
+
+.fixBtn {
+  width: 42px;
+  height: 42px;
+  box-shadow: 2px 2px 5px #212121;
+  position: fixed;
+  right: 32px;
+  border-radius: 21px;
+  color: #fff;
+  background: #D500F9;
+  text-align: center;
+  cursor: pointer;
+}
+
+.fixBtn i {
+  font-size: 32px;
+  padding-top: 4px;
+}
+
+.fixBtn:hover{
+ box-shadow: 5px 5px 8px #212121;
+}
+
+.checkbox input[type="checkbox"] + label {
+  font-size: 18px;
+  position: relative;
+  cursor: pointer;
+}
+
+.checkbox input[type="checkbox"] + label::before {
+  content : "";
+  display:inline-block;
+  width: 18px;
+  height: 18px;
+  margin-bottom:-2px;
+  background: url('icon/box.png') no-repeat;
+  background-size: contain;
+}
+.checkbox input[type="checkbox"]:checked + label::before {
+  content : "";
+  display:inline-block;
+  width: 18px;
+  height: 18px;
+  margin-bottom:-2px;
+  background: url('icon/check_box.png') no-repeat;
+  background-size: contain;
+}
+.checkbox input[type="checkbox"]:disabled  + label::before {
+  cursor: inherit;
+  overflow: 0.5;
+}
+
+
+.radiobutton input[type="radio"] + label {
+  font-size: 18px;
+  position: relative;
+  cursor: pointer;
+
+}
+.radiobutton input[type="radio"]:checked + label {
+  color: #CDDC39;
+}
+
+.radiobutton input[type="radio"] + label::before {
+  content : "";
+  display:inline-block;
+  width: 18px;
+  height: 18px;
+  margin-bottom:-2px;
+  background: url('icon/off.png') no-repeat;
+  background-size: contain;
+}
+.radiobutton input[type="radio"]:checked + label::before {
+  content : "";
+  display:inline-block;
+  width: 18px;
+  height: 18px;
+  margin-bottom:-2px;
+  background: url('icon/on.png') no-repeat;
+  background-size: contain;
+}
+.radiobutton input[type="radio"]:disabled   + label::before{
+  cursor: inherit;
+  overflow: 0.5;
+}
+
+input {
+  background-color: rgba(0,0,0,0);
+  border: none;
+  border-bottom: solid 2px #827717;
+  padding: 5px;
+  font-family: 'Roboto', serif;
+}
+input:focus {
+  border-bottom-color: #D500F9;
+  color:#D500F9;
+}
+
+select {
+  font-family: 'Roboto', serif;
+  background-color: rgba(0,0,0,0);;
+  border: none;
+  border-bottom: solid 2px #827717;
+  padding: 5px;
+  min-width: 200px;
+  width: 100%;
+}
+option {
+  padding:2px;
+}
+
+ .multi_select {
+  border: none;
+  background: white;
+ }
+
+option:hover{
+  background-color: #827717;
+  color: #ecf0f1;
+}
+
+button {
+  background-color: #D500F9;
+  color: #ecf0f1;
+  font-family: 'Roboto', serif;
+  text-transform: uppercase;
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+input[type="radio"], input[type="checkbox"] {
+  display: none;
+}
+
+.find {
+  position: relative;
+  color: #827717;
+}
+
+.find input {
+  height: 24px;
+  padding-left: 24px;
+}
+
+.find i{
+  position:absolute;
+  top: 5px;
+  left: 0;
+  font-size: 24px;
+}
+
+.find:focus {
+    color: #D500F9;
+}
+
+.alert {
+  position: fixed;
+  top: 0;
+  width: 500px;
+  left: 50%;
+  margin-left: -250px;
+  text-align: center;
+  background: #f44336;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  opacity: 0.3;
+}
+
+.alert:hover {
+  opacity: 1;
+}

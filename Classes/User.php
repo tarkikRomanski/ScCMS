@@ -1,6 +1,6 @@
 <?php
 require_once 'db_connect.php';
-require_once 'funtion.php';
+require_once 'function.php';
 
 use DataBase\Connect as conn;
 
@@ -25,10 +25,11 @@ class User {
    * @param  string $newEmail    Почтовый адрес нового пользователя
    * @return [type]              На выходе 1 или ошибка u2 - данный никнейм занят
    */
-  public function newUser($newName, $newPassword, $newEmail) {
+  public function newUser($newName, $newPassword) {
     if($this->isUser($newName) == null) {
-      $values = array($newName, $newEmail, md5(trim($newPassword)));
-      $columns = array('nickname', 'email', 'password');
+      $nowDate = date('Y-m-d H:i:s');
+      $values = array($newName, md5(trim($newPassword)), $nowDate);
+      $columns = array('nickname','password', 'registration' );
       $result = $this->connect->insertDataTable('users', $values, $columns);
       return $result;
     } else {
@@ -74,17 +75,19 @@ class User {
     if($user != null){
       if($user['password'] == md5(trim($userPassword))){
           setcookie("userNickname", $user['nickname'], 0x6FFFFFFF, '/' ,'sccms.ua');
+          setcookie("userRegistration", $user['registration'], 0x6FFFFFFF, '/' ,'sccms.ua');
+
           setcookie("userName", $user['name'], 0x6FFFFFFF, '/' ,'sccms.ua');
           setcookie("userSurname", $user['surname'], 0x6FFFFFFF, '/' ,'sccms.ua');
           setcookie("userAva", $user['ava'], 0x6FFFFFFF, '/' ,'sccms.ua');
           setcookie("userBirthday", $user['birthday'], 0x6FFFFFFF, '/' ,'sccms.ua');
-          setcookie("userRegistration", $user['registration'], 0x6FFFFFFF, '/' ,'sccms.ua');
+
           setcookie("userLastOnline", $user['lastOnline'], 0x6FFFFFFF, '/' ,'sccms.ua');
           setcookie("userNickname", $user['nickname'], 0x6FFFFFFF, '/' ,'sccms.ua');
 
 
 
-
+        if($user['status'] != null)
           if($user['status'] == 1) {
             setcookie("userStatus", getWord(1, 1), 0x6FFFFFFF, '/' ,'sccms.ua');
               setcookie("userClass", $user['class_id'], 0x6FFFFFFF, '/' ,'sccms.ua');

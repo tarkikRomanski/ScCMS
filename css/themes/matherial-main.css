@@ -15,7 +15,12 @@ body {
   padding: 8px 16px;
 }
 
-h1, h2, h3 {
+h1 {
+  color: #D500F9;
+  text-transform: uppercase;
+}
+
+h2, h3 {
   color: #827717;
   text-transform: uppercase;
 }
@@ -77,11 +82,12 @@ a:hover {
   background: #D500F9;
   text-align: center;
   cursor: pointer;
+  z-index: 10;
 }
 
 .fixBtn i {
-  font-size: 32px;
-  padding-top: 4px;
+  font-size: 24px;
+  padding-top: 10px;
 }
 
 .fixBtn:hover{
@@ -236,4 +242,78 @@ input[type="radio"], input[type="checkbox"] {
 
 .alert:hover {
   opacity: 1;
+}
+
+#header {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 460px;
+  margin-bottom: 0px;
+  z-index: 3;
+}
+
+#header h1 {
+  position: absolute;
+  top: 16px;
+  right: 32px;
+}
+
+#header .fixBtn {
+  position: absolute;
+  bottom: -21px;
+}
+
+#header h1 {
+  color: #fff;
+}
+
+#header a {
+  color: white;
+}
+
+#header a:hover {
+  color: #fff;
+}
+
+#navigator {
+  width: 100%;
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 64px;
+  background: #fff;
+  height: 80px;
+}
+
+#navigator .menuItem {
+  display: inline-block;
+  width: 33%;
+  height: 100%;
+  font-size: 20px;
+  padding-top: 30px;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+#navigator .menuItem:hover {
+  color: #D500F9;
+}
+
+.lastNews {
+  display: inline-block;
+  width: 31%;
+  margin-left: 0.5%;
+  padding: 8px;
+  background: #CDDC39;
+}
+
+.lastNews p {
+  text-align: right;
+  font-size: 12px;
+}
+
+.lastNews h2 {
+  color: #fff;
 }

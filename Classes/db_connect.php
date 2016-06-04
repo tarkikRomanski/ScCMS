@@ -128,7 +128,7 @@ namespace DataBase;
 
                 $result = $this->connect->prepare($query);
                 $result->execute();
-                $row = $result;
+                $row = 1;
             } catch (PDOException $e) {
                 $row = $e->getMessage();
             }

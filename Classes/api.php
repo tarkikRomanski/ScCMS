@@ -28,6 +28,26 @@ $s = $_POST['s'];
       $result = $connect->insertDataTable('news', $values, $columns);
       echo $result;
       break;
+    case 'addTopic':
+      $nowDate = date('Y-m-d H:i:s');
+      $values = array($_POST['title'], $_POST['bb'], $nowDate, $_COOKIE['userId']);
+      $columns = array('title','bbText', 'publication', 'users_id' );
+      $result = $connect->insertDataTable('topics', $values, $columns);
+      echo $result;
+      break;
+      case 'addComment':
+      $nowDate = date('Y-m-d H:i:s');
+      $values = array($_POST['text'], $_POST['target'], $nowDate, $_COOKIE['userId'], 1);
+      $columns = array('text','target', 'created', 'users_id', 'target_id' );
+      $result = $connect->insertDataTable('comments', $values, $columns);
+      echo $result;
+      break;
+      case 'addHistory':
+      $value = $_POST['bb'];
+      $column = 'history';
+      $result = $connect->setDataTable('history', $column, $value, 'id=1');
+      echo $result;
+      break;
   }
 
 ?>

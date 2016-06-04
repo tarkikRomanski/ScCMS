@@ -11,7 +11,7 @@
 <body>
 
     <div class="shadow1" id="header" data-parallax="scroll" data-image-src="image/header.jpg">
-        <h1>Вінницька школа №666</h1>
+        <h1>Вінницька школа #6</h1>
         <div class="fixBtn">
             <?php if (!isset($_COOKIE['userId'])): ?>
             <a href="?page=signin" id="signInLink">
@@ -23,9 +23,13 @@
         </div>
     </div>
     <div id="navigator" class="shadow1">
-        <div class="menuItem">Новини</div>
-        <div class="menuItem">Форум</div>
+        <div class="menuItem"><a href="index.php">Головна</a></div>
+        <div class="menuItem"><a href="?page=news">Новини</a></div>
+        <div class="menuItem"><a href="?page=forum">Форум</a></div>
         <div class="menuItem">Особистий кабінет</div>
+        <div class="menuItem">Досягнення</div>
+        <div class="menuItem"><a href="?page=best">Найкращі студенти</a></div>
+        <div class="menuItem"><a href="?page=history">Історія закладу</a></div>
     </div>
 
 <div id="content">
@@ -38,7 +42,20 @@
 
             case "news":
                 include_once "news.php";
-            break;
+                break;
+
+            case "forum":
+                include_once "forum.php";
+                break;
+            case "addForum":
+                include_once "addForum.php";
+                break;
+            case "history":
+                include_once "history.php";
+                break;
+            case "best":
+                include_once "best.php";
+                break;
 
             default:
                 include_once "default.php";

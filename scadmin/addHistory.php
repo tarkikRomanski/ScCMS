@@ -4,29 +4,24 @@
                 lang: "ua"
             }
             $(function() {
-                $("#newsBB").wysibb(wbbOpt);
+                $("#historyBB").wysibb(wbbOpt);
             })
   </script>
+  <script src="../js/ua.js"></script>
 <?php if (isset($_COOKIE['userId'])): ?>
-  <p>
-    Заголовок новини:
-    <input type="text" id="newsTitle">
-  </p>
-
    <p>
-    Контент новини:
-    <textarea name="bb" id="newsBB" style="height: 400px;">
+    Історія навчального закладу:
+    <textarea name="bb" id="historyBB" style="height: 400px;">
 
     </textarea>
   </p>
 
-  <button id="sendAddNews">Добавити новину</button>
+  <button id="sendAddHistory">Замінити історію</button>
   <script>
-  $('#sendAddNews').click(function(){
+  $('#sendAddHistory').click(function(){
     $.post('../Classes/api.php',
       {
-        s: 'addNews',
-        title: $('#newsTitle').val(),
+        s: 'addHistory',
         bb: $('.wysibb-text-editor').html()
       },
       function(data, textStatus, xhr) {

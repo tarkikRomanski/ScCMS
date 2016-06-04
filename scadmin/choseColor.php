@@ -1,4 +1,6 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto);
+<?php
+
+$css = "@import url(https://fonts.googleapis.com/css?family=Roboto);
 
 /*font-family: 'Roboto', sans-serif;*/
 /*
@@ -95,13 +97,13 @@ a:hover {
  box-shadow: 5px 5px 8px #212121;
 }
 
-.checkbox input[type="checkbox"] + label {
+.checkbox input[type=\"checkbox\"] + label {
   font-size: 18px;
   position: relative;
   cursor: pointer;
 }
 
-.checkbox input[type="checkbox"] + label::before {
+.checkbox input[type=\"checkbox\"] + label::before {
   content : "";
   display:inline-block;
   width: 18px;
@@ -110,7 +112,7 @@ a:hover {
   background: url('icon/box.png') no-repeat;
   background-size: contain;
 }
-.checkbox input[type="checkbox"]:checked + label::before {
+.checkbox input[type=\"checkbox\"]:checked + label::before {
   content : "";
   display:inline-block;
   width: 18px;
@@ -119,23 +121,23 @@ a:hover {
   background: url('icon/check_box.png') no-repeat;
   background-size: contain;
 }
-.checkbox input[type="checkbox"]:disabled  + label::before {
+.checkbox input[type=\"checkbox\"]:disabled  + label::before {
   cursor: inherit;
   overflow: 0.5;
 }
 
 
-.radiobutton input[type="radio"] + label {
+.radiobutton input[type=\"radio\"] + label {
   font-size: 18px;
   position: relative;
   cursor: pointer;
 
 }
-.radiobutton input[type="radio"]:checked + label {
+.radiobutton input[type=\"radio\"]:checked + label {
   color: #3F51B5;
 }
 
-.radiobutton input[type="radio"] + label::before {
+.radiobutton input[type=\"radio\"] + label::before {
   content : "";
   display:inline-block;
   width: 18px;
@@ -144,7 +146,7 @@ a:hover {
   background: url('icon/off.png') no-repeat;
   background-size: contain;
 }
-.radiobutton input[type="radio"]:checked + label::before {
+.radiobutton input[type=\"radio\"]:checked + label::before {
   content : "";
   display:inline-block;
   width: 18px;
@@ -153,7 +155,7 @@ a:hover {
   background: url('icon/on.png') no-repeat;
   background-size: contain;
 }
-.radiobutton input[type="radio"]:disabled   + label::before{
+.radiobutton input[type=\"radio\"]:disabled   + label::before{
   cursor: inherit;
   overflow: 0.5;
 }
@@ -204,7 +206,7 @@ button {
   cursor: pointer;
 }
 
-input[type="radio"], input[type="checkbox"] {
+input[type=\"radio\"], input[type=\"checkbox\"] {
   display: none;
 }
 
@@ -470,3 +472,6 @@ input[type="radio"], input[type="checkbox"] {
   border-top: 2px solid #FF3D00;
   border-bottom: 2px solid #FF3D00;
 }
+";
+
+echo $css;
